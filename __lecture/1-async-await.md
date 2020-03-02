@@ -14,7 +14,7 @@
 const newPauseFunction = (sec) => {
     return new Promise(function(resolve) {
         console.log(`${sec}s pause`);
-        setTimeout(() => resolve('resolve'), sec * 1000);
+        setTimeout(() => resolve(sec * 2), sec * 1000);
     });
 }
 
@@ -27,6 +27,13 @@ newPauseFunction(1)
 
 _let's convert it to async/await_
 
+const doIt = async () =>{
+    let data = await newPauseFunction(1);
+    data = await newPauseFunction(data);
+    data = await newPauseFunction(data);
+    await newPauseFunction(data);
+    console.log("no more awaits");
+}
 ---
 
 ### Exercise
@@ -45,7 +52,19 @@ transformText(string)
     })
     .catch((err) => console.log(err));
 ```
-
+const func = async(){
+    try {
+        let str = await transformText(string);
+        str = await allCaps(str);
+        str = await trimFirst(str);
+        str = await trimLast(str);
+        str = await replaceWithX(str);
+        await {
+            console.log(str);
+            return str;
+    }
+    .catch ((err) => console.log(err));
+}
 ---
 
 ## Error Handling
