@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="./styles.css" />
         <title>So funny</title>
     </head>
-    <body>
-        <div class='centered-container'>
+    <body id="body">
+        <div id='main' class='centered-container'>
             <form>
                 <label>
                     Gimme a
-                    <select id="type" name="type" class='joke-select'>
+                    <select id="type" name="jokeType" class='joke-select' onchange="handleSubmit(event)">
                         <option value='undefined'>Select</option>
                         <option value='dad'>dad</option>
                         <option value='geek'>geek</option>
